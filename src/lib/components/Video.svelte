@@ -101,13 +101,17 @@
 </script>
 
 <!-- 모바일 브라우저에서의 제약사항 -->
-<!-- 
+<!-- (1) video와 autoplay 모드
    사용자 입력 없이 자동으로 재생되는 미디어에 대한 보안 정책의 이유로 "TMLMediaElement::play() rejecting promise: FullscreenRequired" 이 존재한다.default
    사용자 입력 없이 자동으로 재생되는 미디어에서는 play() 메소드를 호출하면 보안 정책에 위배되어 오류가 발생한다. 즉, 모바일에서의 화면을 통한 미디어 송출이 안된다.
 
    이를 방지하고자, video 태그의 autoplay 속성을 활용하여 자동으로 영상이 재생되도록 만들어줄 수 있다. 이때 영상은 fullscreen으로 보여지게 된다.
    이때 WebRTC 기술을 활용하면 서버를 통해 스트리밍하면서 동시에 사용자 입력없이 자동 재생이 가능해진다.
  -->
+<!-- (2) HTTPS 
+   HTTPS 연결이 아니라면, getUserMedia() 라는 BOM 메소드의 호출에 대한 권한이 거부된다.
+   즉, 카메라, 마이크 엑세스를 요청하는 대화상자가 표시되지 않는다.
+-->
 <div class="relative w-96 h-96 overflow-hidden bg-gray-100">
   <!-- svelte-ignore a11y-media-has-caption -->
   <video
