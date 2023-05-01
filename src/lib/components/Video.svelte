@@ -6,8 +6,9 @@
   let videoElement: HTMLMediaElement;
   let audio = false;
 
-  let videos = [];
+  let videos: InputDeviceInfo[] = [];
   let deviceId: string | undefined;
+  let currentCameralabel: string;
 
   /**
    * MediaStream
@@ -23,7 +24,8 @@
    *    - 카메라나, 마이크와 같은 media input으로의 access를 가능하게 해준다.
    *    - 메서드
    *      - enumerateDevices() : device들의 정보를 나열한다.
-   *      - ... 
+   *      - ...
+   * Device 정보와 Stream의 정보는 다르다.
    * MediaDevice : deviceId, label, kind..
    * navigator.mediaDevices.getUserMedia(deviceId)
    */
@@ -51,14 +53,14 @@
       // 미디어 스트림을 video 태그에 넣는다.
       videoElement.srcObject = stream;
 
-      // 초기 deviceId 값 설정
-      deviceId = stream.getVideoTracks()?.id;
+      // 현재 송출되는 mediaStream이 어떤 device에서 나오는 것인지에 대한 정보를 deviceId에 넣는다.
+      currentCameralabel = stream.getVideoTracks()[0].label;
     } catch (error) {
       console.error(error);
     }
   };
 
-  // 비디오 종류 불러오기
+  // 비디오 종류 불러오기 : videos 배열에 device 정보들을 저장한다.
   const getVideos = async () => {
     try {
       const devices = await navigator.mediaDevices.enumerateDevices();
@@ -72,6 +74,7 @@
   const changeDevice = async (e: Event) => {
     try {
       deviceId = e.target?.value;
+      await getVideos();
       await getMedia(deviceId);
     } catch (err) {
       console.log(err);
@@ -93,8 +96,8 @@
   };
 
   onMount(async () => {
-    await getMedia(deviceId);
     await getVideos();
+    await getMedia(deviceId);
   });
 
   onDestroy(async () => await stopVideoStream());
@@ -136,7 +139,7 @@
     {#each videos as video}
       <option
         value="{video?.deviceId}"
-        selected="{video?.deviceId === deviceId}">{video?.label}</option
+        selected="{video?.label === currentCameralabel}">{video?.label}</option
       >
     {/each}
   </select>
