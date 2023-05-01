@@ -1,9 +1,11 @@
 <script lang="ts">
   import Layout from "$lib/components/Layout.svelte";
   import Video from "$lib/components/Video.svelte";
+  import BroadCast from "$lib/components/BroadCast.svelte";
   import Icon from "$lib/Icon.svelte";
 
   let hasVideo = false;
+  let sendBroadCast = false;
 
   const startVideo = () => {
     hasVideo = true;
@@ -11,6 +13,7 @@
 
   const stopVideo = () => {
     hasVideo = false;
+    sendBroadCast = false;
   };
 </script>
 
@@ -29,7 +32,7 @@
       {/if}
     </div>
     <!-- 비디오 시작 종료 버튼 -->
-    <div class="flex gap-8 mt-12">
+    <div class="flex gap-11 mt-12">
       <button
         class="flex gap-2 p-3 bg-blue-600 text-white rounded font-semibold"
         on:click|preventDefault="{startVideo}"
@@ -45,5 +48,10 @@
         <Icon icon="video-off" color="#1D4ED8" />
       </button>
     </div>
+    {#if hasVideo}
+      <div class="mt-6">
+        <BroadCast />
+      </div>
+    {/if}
   </div>
 </Layout>

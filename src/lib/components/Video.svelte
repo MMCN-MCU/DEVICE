@@ -115,7 +115,7 @@
    HTTPS 연결이 아니라면, getUserMedia() 라는 BOM 메소드의 호출에 대한 권한이 거부된다.
    즉, 카메라, 마이크 엑세스를 요청하는 대화상자가 표시되지 않는다.
 -->
-<div class="relative w-96 h-96 overflow-hidden bg-gray-100">
+<div class="flex items-center relative w-96 h-96 overflow-hidden bg-gray-100">
   <!-- svelte-ignore a11y-media-has-caption -->
   <video
     bind:this="{videoElement}"
@@ -123,7 +123,7 @@
     autoplay
     controls></video>
   <button
-    class="absolute bottom-3 right-3 p-2 rounded-full bg-white"
+    class="absolute bottom-2 right-2 p-2 rounded-full bg-white"
     on:click|preventDefault="{toggleAudio}"
   >
     {#if audio}

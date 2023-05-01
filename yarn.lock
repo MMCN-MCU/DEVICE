@@ -1904,6 +1904,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wnynya/dns@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@wnynya/dns@npm:0.7.0"
+  checksum: b174aa6d09fd681159713ef69b00abbde3a1c201efde794a3dbe53268b08c42cf42d7238ff0ca6d86f64763a78f9152e2007362c7cf51c2f8edc30119a01a6d0
+  languageName: node
+  linkType: hard
+
+"@wnynya/ip@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@wnynya/ip@npm:0.8.0"
+  checksum: 3fff84d67090c371954bd44d850f947229e605ea4336fe5cfad24b9198ac9838c3cc9995da129d4409a991df28de77e412ddb7a12c7488b807222b4eeb5fb710
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -2553,6 +2567,7 @@ __metadata:
     "@vite-pwa/sveltekit": ^0.2.1
     autoprefixer: ^10.4.14
     feather-icons: ^4.29.0
+    pingus: ^1.1.12
     postcss: ^8.4.21
     prettier: ^2.8.7
     prettier-plugin-svelte: ^2.10.0
@@ -4006,6 +4021,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nan@npm:2.14.*":
+  version: 2.14.2
+  resolution: "nan@npm:2.14.2"
+  dependencies:
+    node-gyp: latest
+  checksum: 7a269139b66a7d37470effb7fb36a8de8cc3b5ffba6e40bb8e0545307911fe5ebf94797ec62f655ecde79c237d169899f8bd28256c66a32cbc8284faaf94c3f4
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:^3.3.4":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
@@ -4202,6 +4226,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pingus@npm:^1.1.12":
+  version: 1.1.12
+  resolution: "pingus@npm:1.1.12"
+  dependencies:
+    "@wnynya/dns": ^0.7.0
+    "@wnynya/ip": ^0.8.0
+    raw-socket: ^1.7.0
+  checksum: 749b8487acbbf525860ea446b2c907d18c29e67cbebb16eb2a22068c906084a43946d0f57d408d4a2eb9bc9116885d55ad6ec9ccb2d53ed8f93c721ea1a85a71
+  languageName: node
+  linkType: hard
+
 "pirates@npm:^4.0.1":
   version: 4.0.5
   resolution: "pirates@npm:4.0.5"
@@ -4374,6 +4409,16 @@ __metadata:
   dependencies:
     safe-buffer: ^5.1.0
   checksum: d779499376bd4cbb435ef3ab9a957006c8682f343f14089ed5f27764e4645114196e75b7f6abf1cbd84fd247c0cb0651698444df8c9bf30e62120fbbc52269d6
+  languageName: node
+  linkType: hard
+
+"raw-socket@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "raw-socket@npm:1.7.0"
+  dependencies:
+    nan: 2.14.*
+    node-gyp: latest
+  checksum: 1f244662898624a84d7f9a48c4358b50bfbd22676cbdf3d206f4db58c7ff3f431ffe91920a6417bef798f0e119b8947734671002fd200c21fa683a922e1f1c37
   languageName: node
   linkType: hard
 
