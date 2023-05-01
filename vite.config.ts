@@ -13,9 +13,9 @@ export default defineConfig({
         name: "MMCN-DEVICE",
         short_name: "DEVICE",
         start_url: "/",
-        display: "standalone",
+        display: "fullscreen",
         background_color: "#ffffff",
-        theme_color: "#000000",
+        theme_color: "#3B82F6",
         icons: [
           {
             src: "/icon-192x192.png",

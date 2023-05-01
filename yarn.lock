@@ -2562,7 +2562,7 @@ __metadata:
     tslib: ^2.4.1
     typescript: ^5.0.0
     vite: ^4.2.0
-    vite-plugin-mkcert: ^1.14.0
+    vite-plugin-mkcert: ^1.14.1
     vite-plugin-pwa: ^0.14.7
   languageName: unknown
   linkType: soft
@@ -5380,9 +5380,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-mkcert@npm:^1.14.0":
-  version: 1.14.0
-  resolution: "vite-plugin-mkcert@npm:1.14.0"
+"vite-plugin-mkcert@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "vite-plugin-mkcert@npm:1.14.1"
   dependencies:
     "@octokit/rest": ^19.0.5
     axios: ^1.2.2
@@ -5390,7 +5390,7 @@ __metadata:
     picocolors: ^1.0.0
   peerDependencies:
     vite: ">=3"
-  checksum: 8d092746b57af1b98679ad593c3a4c202e864a6ce3e85d574294f60c41d8e2129eebc5de3486c524788550aecb676c3da57159f1f40090b4c40b2d99f0d7f4ed
+  checksum: 5dd06c3850c1137121481681500adbeba89e1356f8ce09b4fd7815ce0eeac4665be6c9770d2067fb002c86d0b74f5980ee4c6689b9d9fcb62cf94e641b727014
   languageName: node
   linkType: hard
 
