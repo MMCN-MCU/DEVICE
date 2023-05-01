@@ -9,33 +9,48 @@ export default defineConfig({
     sveltekit(),
     mkcert(),
     VitePWA({
-      registerType: "autoUpdate",
-      useCredentials: true,
-      includeAssets: ["favicon.png"],
-      devOptions: {
-        enabled: true,
-      },
       manifest: {
-        name: "mcu-device",
-        short_name: "mcu-device",
-        description: "mmcn-mcu project device app",
-        theme_color: "#ffffff",
+        name: "MMCN-DEVICE",
+        short_name: "DEVICE",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#ffffff",
+        theme_color: "#000000",
         icons: [
           {
-            src: "/src/assets/favicon.png",
+            src: "/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/src/assets/favicon.png",
-            sizes: "192x192",
+            src: "/icon-512x512.png",
+            sizes: "512x512",
             type: "image/png",
           },
+        ],
+      },
+      workbox: {
+        runtimeCaching: [
           {
-            src: "/src/assets/favicon.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "any maskable",
+            urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "google-fonts-stylesheets",
+            },
+          },
+          {
+            urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-fonts-webfonts",
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+              expiration: {
+                maxAgeSeconds: 60 * 60 * 24 * 365,
+                maxEntries: 30,
+              },
+            },
           },
         ],
       },

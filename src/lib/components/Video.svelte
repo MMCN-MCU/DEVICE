@@ -23,7 +23,7 @@
    *    - 카메라나, 마이크와 같은 media input으로의 access를 가능하게 해준다.
    *    - 메서드
    *      - enumerateDevices() : device들의 정보를 나열한다.
-   *      -
+   *      - ... 
    * MediaDevice : deviceId, label, kind..
    * navigator.mediaDevices.getUserMedia(deviceId)
    */
