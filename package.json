@@ -29,6 +29,6 @@
   "type": "module",
   "dependencies": {
     "feather-icons": "^4.29.0",
-    "pingus": "^1.1.12"
+    "socket.io-client": "^4.6.1"
   }
 }
