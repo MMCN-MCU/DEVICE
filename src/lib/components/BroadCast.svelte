@@ -1,16 +1,14 @@
 <script lang="ts">
   import { io } from "socket.io-client";
-  import { onMount } from "svelte";
+  import { SIGNALING_SERVER } from "$lib/constants";
 
-  const SIGNALING_SERVER = "http://localhost:3000";
   const socket = io(SIGNALING_SERVER);
 
   let findClient = false;
 
   const handleFind = () => {
     findClient = !findClient;
-    socket.emit("hello", "fuck");
-    console.log(socket);
+    socket.emit("join", "hello");
   };
 </script>
 
