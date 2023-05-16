@@ -16,7 +16,7 @@
 
 <div class="flex flex-col gap-4">
   <button
-    class="px-20 py-3 rounded bg-blue-600 text-white font-semibold"
+    class="px-20 py-3 rounded bg-blue-600 text-white font-semibold hover:opacity-80"
     on:click|preventDefault="{handleFind}"
   >
     디바이스 영상 송출
@@ -75,7 +75,7 @@
           </div>
           <!-- 입력 완료 -->
           <button
-            class="mt-4 mx-4 w-full py-3 bg-blue-500 rounded text-white font-semibold"
+            class="mt-4 mx-4 w-full py-3 bg-blue-600 rounded text-white font-semibold hover:opacity-80"
             >연결하기</button
           >
         </div>

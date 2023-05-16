@@ -34,7 +34,7 @@
     <!-- 비디오 시작 종료 버튼 -->
     <div class="flex gap-11 mt-12">
       <button
-        class="flex gap-2 p-3 bg-blue-600 text-white rounded font-semibold"
+        class="flex gap-2 p-3 bg-blue-600 text-white rounded font-semibold hover:opacity-80"
         on:click|preventDefault="{startVideo}"
       >
         <span>영상 시작</span>
